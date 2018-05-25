@@ -1,0 +1,49 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ajouter une facture
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+    {{ form_start(form) }}
+                    <label>N° facture :</label>
+                    {{ form_widget(form.num, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>Clinique :</label>
+                    {{ form_widget(form.clinique, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                    <br>
+                    <label>Date facturation :</label>
+                    {{ form_widget(form.dateFact, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>Date réception :</label>
+                    {{ form_widget(form.dateRec, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>Montant :</label>
+                    {{ form_widget(form.Montant, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                    <br>
+                    <button type="submit" class="btn btn-info">Ajouter</button>
+    {{ form_end(form) }}
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

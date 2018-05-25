@@ -1,0 +1,26 @@
+project_sitep_global:
+    resource: "@ProjectSitepGlobalBundle/Resources/config/routing.yml"
+    prefix:   /
+
+project_sitep_drh:
+    resource: "@ProjectSitepDrhBundle/Resources/config/routing.yml"
+    prefix:   /
+
+project_sitep_dfin:
+    resource: "@ProjectSitepDfinBundle/Resources/config/routing.yml"
+    prefix:   /
+
+project_sitep_dasfa:
+    resource: "@ProjectSitepDasfaBundle/Resources/config/routing.yml"
+    prefix:   /
+
+project_sitep_user:
+    resource: "@ProjectSitepUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

@@ -1,0 +1,50 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block content %}
+{% trans_default_domain 'FOSUserBundle' %}
+    <div class="row">
+        <div class="col-lg-12">
+            <section class="panel">
+                <header class="panel-heading">
+                    Ajouter un utilisateur
+                </header>
+                <div class="panel-body">
+                    <div class="position-center">
+                        {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Email</label>
+                                {{ form_widget(form.email, { 'attr': {'class': "form-control", 'placeholder': 'email'} }) }}
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">nom d'utilisateur</label>
+                                {{ form_widget(form.username, { 'attr': {'class': "form-control", 'placeholder': 'username'} }) }}
+                            </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Mot de passe</label>
+                            {{ form_widget(form.plainPassword.first, { 'attr': {'class': "form-control", 'placeholder': 'mote de passe'} }) }}
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Répétez le mot de passe</label>
+                            {{ form_widget(form.plainPassword.second, { 'attr': {'class': "form-control", 'placeholder': 'répétez mot de passe'} }) }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Rôle</label>
+                            {{ form_widget(form.roles, { 'attr': {'class': "form-control", 'placeholder': 'répétez mot de passe'} }) }}
+                        </div>
+
+                            <button type="submit" class="btn btn-info">Ajouter</button>
+                        {{ form_end(form) }}
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+
+
+    <br><br><br><br><br><br><br><br>
+
+{% endblock content %}

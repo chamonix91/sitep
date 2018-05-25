@@ -1,0 +1,15 @@
+{% extends "@ProjectSitepGlobal/Template/layout.html.twig" %}
+
+{% block meta %}
+    <meta http-equiv="refresh" content="1; URL=http://localhost:8181/sitep/web/app_dev.php/login">
+
+{% endblock %}
+
+{% block content %}
+<div class="alert alert-dismissible alert-success">
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+    <strong>Félicitation!</strong> L'utilisateur {{ app.user.username }} est ajouté avec succès! vous êtes maintenant connecté en tant que
+    {{ app.user.username }}.. vous pouvez déconnecter et revenir à votre session  <a href="{{ path('fos_user_security_logout') }}" class="alert-link">ici</a>.
+</div>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock content %}

@@ -1,0 +1,150 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('dasfa') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Prises en charges</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('pc_index') }}">Liste P.C</a></li>
+                    <li><a href="{{ path('pc_new') }}">Ajouter P.C</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Bulletins de soin </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('bs_index') }}">Liste BS</a></li>
+                    <li><a href="{{ path('bs_new') }}">Ajouter BS</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ajouter Prise en charge
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>N° P.C :</label>
+                            {{ form_widget(form.num_pc, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Date P.C :</label>
+                            {{ form_widget(form.date_pc, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Bulletin de soin :</label>
+                            {{ form_widget(form.bs, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                            <br>
+                            <label>N° Facture :</label>
+                            {{ form_widget(form.facture.num, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>N° bord Transfert Star :</label>
+                            {{ form_widget(form.numTrStar, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>Date bord Transfert Star :</label>
+                            {{ form_widget(form.dateTrStar, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>N° bord Remb Star  :</label>
+                            {{ form_widget(form.numRmStar, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>Date bord Transfert Star :</label>
+                            {{ form_widget(form.dateRmStar, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label>Clinique :</label>
+                            {{ form_widget(form.facture.clinique, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Date Facture :</label>
+                            {{ form_widget(form.facture.dateFact, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                            <br>
+
+                            <label>Date Réception Facture :</label>
+                            {{ form_widget(form.facture.dateRec, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Montant :</label>
+                            {{ form_widget(form.facture.Montant, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+
+
+                            <label>Montant remboursé :</label>
+                            {{ form_widget(form.montanRemb, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>Reclamation Star :</label>
+                            {{ form_widget(form.recStar, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>CI à la DF Appurement :</label>
+                            {{ form_widget(form.ciApur, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>Apuré ? </label>
+                            {{ form_widget(form.appure, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                        </div>
+                    </div>
+
+
+                    <br><br>
+                    <button type="submit" class="btn btn-info">Ajouter</button>
+    {{ form_end(form) }}
+
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

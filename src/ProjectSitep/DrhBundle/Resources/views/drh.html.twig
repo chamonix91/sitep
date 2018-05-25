@@ -1,0 +1,52 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('drh') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-barcode"></i>
+                    <span>Retenue sur salaire </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('cheque_index') }}">Liste des Retenue</a></li>
+                    <li><a href="{{ path('cheque_new') }}">Ajouter une retenue</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+{% block content %}
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+
+
+{% endblock content %}

@@ -1,0 +1,7 @@
+project_sitep_user_user:
+    resource: "@ProjectSitepUserBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+
+project_sitep_user_homepage:
+    path:     /
+    defaults: { _controller: ProjectSitepUserBundle:Default:index }

@@ -1,0 +1,164 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('dasfa') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Prises en charges</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('pc_index') }}">Liste P.C</a></li>
+                    <li><a href="{{ path('pc_new') }}">Ajouter P.C</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Bulletins de soin </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('bs_index') }}">Liste BS</a></li>
+                    <li><a href="{{ path('bs_new') }}">Ajouter BS</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+
+{% block content %}
+
+<section class="wrapper">
+    <div class="table-agile-info">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Détails sur la prise en charge numéro {{ priseEnCharge.numPc }}
+            </div>
+
+            <div class="table-responsive">
+                <table class="table table-striped b-t b-light">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ priseEnCharge.id }}</td>
+            </tr>
+            <tr>
+
+                <th>Nom & Prénom</th>
+
+                <td>{{ priseEnCharge.bs.agent.prenom }} {{ priseEnCharge.bs.agent.nom }}</td>
+            </tr>
+            <tr>
+                <th>Code Pres</th>
+
+                <td>{{ priseEnCharge.bs.prestation.code }}</td>
+            </tr>
+            <tr>
+
+                <th>N° P.C</th>
+
+                <td>{{ priseEnCharge.numpc }}</td>
+            </tr>
+            <tr>
+                <th>Date P.C</th>
+
+                <td>{{ priseEnCharge.datePc |date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+
+                <th>Clinique</th>
+
+                <td>{{ priseEnCharge.facture.clinique }}</td>
+            </tr>
+            <tr>
+                <th>Recep Facture</th>
+
+                <td>{{ priseEnCharge.facture.dateRec|date('Y-m-d') }}</td>
+            </tr><tr>
+                <th>N° Facture</th>
+
+                <td>{{ priseEnCharge.facture.num }}</td>
+            </tr>
+            <tr>
+                <th>Date Facture</th>
+
+                <td>{{ priseEnCharge.facture.dateFact|date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+
+                <th>Montant Facture</th>
+
+                <td>{{ priseEnCharge.facture.Montant }}</td>
+            </tr>
+            <tr>
+
+                <th>N° BS</th>
+
+                <td>{#{{ priseEnCharge.bs.num_bulletin }}#}</td>
+            </tr>
+            <tr>
+
+                <th>Trans D.F</th>
+
+                <td>{{ priseEnCharge.transDF }}</td>
+            </tr>
+            <tr>
+                <th>Montant Remboursé</th>
+
+                <td>{{ priseEnCharge.montanRemb }}</td>
+            </tr>
+            <tr>
+                <th>Réclamation STAR</th>
+
+                <td>{{ priseEnCharge.recStar }}</td>
+            </tr>
+            <tr>
+                <th>Situation Dossier</th>
+                <td>{{ priseEnCharge.appure }}</td>
+            </tr>
+            <tr>
+                <th>CI à la DF Appurement</th>
+                <td>{{ priseEnCharge.ciApur|date('Y-m-d') }}</td>
+            </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+
+            </div>
+            <footer class="panel-footer">
+
+            </footer>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

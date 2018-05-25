@@ -1,0 +1,131 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('dasfa') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Prises en charges</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('pc_index') }}">Liste P.C</a></li>
+                    <li><a href="{{ path('pc_new') }}">Ajouter P.C</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Bulletins de soin </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('bs_index') }}">Liste BS</a></li>
+                    <li><a href="{{ path('bs_new') }}">Ajouter BS</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ajouter un bulletin de soin
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+                    {{ form_start(form) }}
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label>Code Agent :</label>
+                            {{ form_widget(form.agent.code, { 'attr': {'class': "form-control", 'placeholder': 'code'} }) }}
+                            <br>
+
+                            <label>Nom :</label>
+                            {{ form_widget(form.agent.nom, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+
+                            <label>Prenom :</label>
+                            {{ form_widget(form.agent.prenom, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>N° Bord :</label>
+                            {{ form_widget(form.num_bord, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                            <br>
+                            <label>Lieu de travail :</label>
+                            {{ form_widget(form.lieuTravail, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Date Bord :</label>
+                            {{ form_widget(form.date_bord, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label>Type Bord :</label>
+                            {{ form_widget(form.typeBord, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>N° Bulletin :</label>
+                            {{ form_widget(form.num_bulletin, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                            <br>
+
+                            <label>Prestataire :</label>
+                            {{ form_widget(form.prestation.prestataire, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Code :</label>
+                            {{ form_widget(form.prestation.code, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                            <br>
+                            <label>Enfants :</label>
+                            {{ form_widget(form.prestation.enfants, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                            <br>
+                            <label>Observation :</label>
+                            {{ form_widget(form.observation, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                        </div>
+                    </div>
+
+                    <br><br>
+                    <button type="submit" class="btn btn-info">Ajouter</button>
+                    {{ form_end(form) }}
+
+
+
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ajouter un chèque
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+    {{ form_start(form) }}
+                    <label>Numéro du chèque :</label>
+                    {{ form_widget(form.num, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>nom et prénom agent :</label>
+                    {{ form_widget(form.agent, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                    <br>
+                    <label>Date du chèque :</label>
+                    {{ form_widget(form.datech, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>Montant :</label>
+                    {{ form_widget(form.montant, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <button type="submit" class="btn btn-info">Ajouter</button>
+    {{ form_end(form) }}
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

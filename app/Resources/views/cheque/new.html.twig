@@ -1,0 +1,41 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Ajouter une retenue
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+    {{ form_start(form) }}
+                    <label>Reliquat totale :</label>
+                    {{ form_widget(form.reliquat, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <label>nombre de Retenu  :</label>
+                    {{ form_widget(form.retenu, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+
+                    <br>
+                    <label>bénéficiaire :</label>
+                    {{ form_widget(form.benif, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    <br>
+                    <button type="submit" class="btn btn-info">Ajouter</button>
+    {{ form_end(form) }}
+
+
+
+
+                </div>
+            </div>
+
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

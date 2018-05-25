@@ -1,0 +1,21 @@
+project_sitep_dasfa_facture:
+    resource: "@ProjectSitepDasfaBundle/Resources/config/routing/facture.yml"
+    prefix:   /facture
+
+project_sitep_dasfa_pc:
+    resource: "@ProjectSitepDasfaBundle/Resources/config/routing/priseencharge.yml"
+    prefix:   /pc
+
+project_sitep_dasfa_bs:
+    resource: "@ProjectSitepDasfaBundle/Resources/config/routing/bulletinsoin.yml"
+    prefix:   /bs
+
+project_sitep_dasfa_homepage:
+    path:     /
+    defaults: { _controller: ProjectSitepDasfaBundle:Default:index }
+
+dasfa:
+    path:     /dasfa
+    defaults: { _controller: ProjectSitepDasfaBundle:Main:Dasfa }
+
+

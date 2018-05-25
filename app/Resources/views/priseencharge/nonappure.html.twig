@@ -1,0 +1,166 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('dasfa') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Prises en charges</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('pc_index') }}">Liste P.C</a></li>
+                    <li><a href="{{ path('pc_new') }}">Ajouter P.C</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Bulletins de soin </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('bs_index') }}">Liste BS</a></li>
+                    <li><a href="{{ path('bs_new') }}">Ajouter BS</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+{% block content %}
+
+    <section class="wrapper">
+        <div class="table-agile-info">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Toutes les prises en charges non appurés
+                </div>
+                <div class="row w3-res-tb">
+                    <div class="col-sm-5 m-b-xs">
+                        <select class="input-sm form-control w-sm inline v-middle">
+                            <option value="0">Par Date PC</option>
+                            <option value="1">Delete selected</option>
+                            <option value="2">Bulk edit</option>
+                            <option value="3">Export</option>
+                        </select>
+                        <button class="btn btn-sm btn-default">Filtrer</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" class="btn btn-success"><a href="{{ path('appure') }}" style="color: white"> Appurés</a></button>
+                        <button type="button" class="btn btn-danger"><a href="{{ path('nonappure') }}" style="color: white">Non Appurés</button>
+
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="input-group">
+                            <input type="text" class="input-sm form-control" placeholder="Search">
+                            <span class="input-group-btn">
+            <button class="btn btn-sm btn-default" type="button">Chercher</button>
+          </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-striped b-t b-light">
+                        <thead>
+                        <tr>
+                            <th>Id Agent</th>
+                            <th>Nom & Prénom</th>
+                            <th>Code Pres</th>
+                            <th>N° P.C</th>
+                            <th>Date P.C</th>
+                            <th>Clinique</th>
+                            <th>Recep Facture</th>
+                            <th>N° Facture</th>
+                            <th>Date Facture</th>
+                            <th>Montant Facture</th>
+                            <th>N° BS</th>
+                            <th>Trans D.F</th>
+                            <th>Montant Remboursé</th>
+                            <th>Réclamation STAR</th>
+                            <th>Situation Dossier</th>
+                            <th>CI à la DF Appurement</th>
+                            <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for priseEnCharge in priseEnCharges %}
+                            <tr>
+                                <td><a href="{{ path('pc_show', { 'id': priseEnCharge.id }) }}">{{ priseEnCharge.id }}</a></td>
+                                <td>{{ priseEnCharge.bs.agent.prenom }} {{ priseEnCharge.bs.agent.nom }}</td>
+                                <td>{{ priseEnCharge.bs.prestation.code }}</td>
+                                <td>{{ priseEnCharge.numpc }}</td>
+                                <td>{{ priseEnCharge.datePc |date('Y-m-d') }}</td>
+                                <td>{{ priseEnCharge.facture.clinique }}</td>
+                                <td>{{ priseEnCharge.facture.dateRec|date('Y-m-d') }}</td>
+                                <td>{{ priseEnCharge.facture.num }}</td>
+                                <td>{{ priseEnCharge.facture.dateFact|date('Y-m-d') }}</td>
+                                <td>{{ priseEnCharge.facture.Montant }}</td>
+                                <td>{#{{ priseEnCharge.bs.num_bulletin }}#}</td>
+                                <td>{{ priseEnCharge.transDF }}</td>
+                                <td>{{ priseEnCharge.montanRemb }}</td>
+                                <td>{{ priseEnCharge.recStar }}</td>
+                                <td>{{ priseEnCharge.appure }}</td>
+                                <td>{{ priseEnCharge.ciApur|date('Y-m-d') }}</td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path('pc_deletelink', {'id': priseEnCharge.id}) }}">Supprimer</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('pc_show', { 'id': priseEnCharge.id }) }}">Détail</a>
+                                        </li>
+                                        <li>
+                                            <a href="{{ path('pc_edit', { 'id': priseEnCharge.id }) }}">Modifier</a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <footer class="panel-footer">
+                    <div class="row">
+
+                        <div class="col-sm-5 text-center">
+                            <small class="text-muted inline m-t-sm m-b-sm">Page 1/1 </small>
+                        </div>
+                        <div class="col-sm-7 text-right text-center-xs">
+                            <ul class="pagination pagination-sm m-t-none m-b-none">
+                                <li><a href=""><i class="fa fa-chevron-left"></i></a></li>
+                                <li><a href="">1</a></li>
+                                <li><a href=""><i class="fa fa-chevron-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% endblock %}

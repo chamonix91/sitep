@@ -1,0 +1,8 @@
+project_sitep_global_homepage:
+    path:     /
+    defaults: { _controller: ProjectSitepGlobalBundle:Default:index }
+
+
+dashborad:
+    path:     /dashboard
+    defaults: { _controller: ProjectSitepGlobalBundle:Main:Dashboard }

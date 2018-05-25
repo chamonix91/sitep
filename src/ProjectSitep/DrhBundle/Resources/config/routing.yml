@@ -1,0 +1,7 @@
+project_sitep_drh_homepage:
+    path:     /
+    defaults: { _controller: ProjectSitepDrhBundle:Default:index }
+
+drh:
+    path:     /drh
+    defaults: { _controller: ProjectSitepDrhBundle:Main:drh }

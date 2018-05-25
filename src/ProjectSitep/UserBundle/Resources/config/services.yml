@@ -1,0 +1,4 @@
+services:
+#    project_sitep_user.example:
+#        class: ProjectSitep\UserBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

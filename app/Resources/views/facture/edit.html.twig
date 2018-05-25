@@ -1,0 +1,37 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+        <section class="panel">
+            <header class="panel-heading">
+                Modifier une facture
+            </header>
+            <div class="panel-body">
+                <div class="position-center">
+                    {{ form_start(edit_form) }}
+                    {{ form_widget(edit_form.num, { 'attr': {'class': "form-control", 'placeholder': 'nom'} }) }}
+                    {{ form_widget(edit_form.clinique, { 'attr': {'class': "form-control", 'placeholder': 'prenom'} }) }}
+                    {{ form_widget(edit_form.dateFact, { 'attr': {'class': "form-control", 'placeholder': 'tel'} }) }}
+                    {{ form_widget(edit_form.dateRec, { 'attr': {'class': "form-control", 'placeholder': 'code'} }) }}
+                    {{ form_widget(edit_form.Montant, { 'attr': {'class': "form-control"} }) }}
+                    <button type="submit" class="btn btn-info">Modifier</button>
+                    {{ form_end(edit_form) }}
+
+
+
+
+
+
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+    <br><br><br><br><br><br><br><br>
+{% endblock %}

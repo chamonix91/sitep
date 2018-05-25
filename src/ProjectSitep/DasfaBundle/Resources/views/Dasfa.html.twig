@@ -1,0 +1,60 @@
+{% extends '@ProjectSitepGlobal/Template/layout.html.twig' %}
+
+{% block navbar %}
+
+    <div class="leftside-navigation">
+        <ul class="sidebar-menu" id="nav-accordion">
+            <li>
+                <a class="active" href="{{ path('dasfa') }}">
+                    <i class="fa fa-dashboard"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-th"></i>
+                    <span>Prises en charges</span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('pc_index') }}">Liste P.C</a></li>
+                    <li><a href="{{ path('pc_new') }}">Ajouter P.C</a></li>
+                </ul>
+            </li>
+
+            <li class="sub-menu">
+                <a href="javascript:;">
+                    <i class="fa fa-envelope"></i>
+                    <span>Bulletins de soin </span>
+                </a>
+                <ul class="sub">
+                    <li><a href="{{ path('bs_index') }}">Liste BS</a></li>
+                    <li><a href="{{ path('bs_new') }}">Ajouter BS</a></li>
+                </ul>
+            </li>
+
+
+
+
+
+            <li>
+                <a href="{{ path('fos_user_security_logout') }}">
+                    <i class="fa fa-user"></i>
+                    <span>Déconnexion</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+{% endblock navbar %}
+{% block content %}
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br>
+    <br><br><br><br><br>
+
+
+
+{% endblock content %}

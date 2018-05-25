@@ -1,0 +1,38 @@
+pc_index:
+    path:     /
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:index" }
+    methods:  GET
+
+pc_show:
+    path:     /{id}/show
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:show" }
+    methods:  GET
+
+pc_new:
+    path:     /new
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:new" }
+    methods:  [GET, POST]
+
+pc_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:edit" }
+    methods:  [GET, POST]
+
+pc_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:delete" }
+    methods:  DELETE
+
+pc_deletelink:
+    path:     /{id}/deletepc
+    defaults: { _controller: ProjectSitepDasfaBundle:PriseEnCharge:deletelink  }
+
+appure:
+    path:     /appure
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:appureList" }
+    methods:  GET
+
+nonappure:
+    path:     /nonappure
+    defaults: { _controller: "ProjectSitepDasfaBundle:PriseEnCharge:nonAppureList" }
+    methods:  GET

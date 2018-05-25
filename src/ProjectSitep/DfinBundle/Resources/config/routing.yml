@@ -1,0 +1,16 @@
+project_sitep_dfin_cheque:
+    resource: "@ProjectSitepDfinBundle/Resources/config/routing/cheque.yml"
+    prefix:   /cheque
+
+project_sitep_dfin_cheques:
+    resource: "@ProjectSitepDfinBundle/Resources/config/routing/cheques.yml"
+    prefix:   /cheques
+
+project_sitep_dfin_homepage:
+    path:     /
+    defaults: { _controller: ProjectSitepDfinBundle:Default:index }
+
+
+dfin:
+    path:     /dfin
+    defaults: { _controller: ProjectSitepDfinBundle:Default:index }
